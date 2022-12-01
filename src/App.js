@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import NotesList from './components/NotesList'
 import { nanoid } from 'nanoid'
 import Search from './components/search'
@@ -43,20 +43,6 @@ const App = () => {
     localStorage.setItem('react-notes-app-data', JSON.stringify(notes))
   }, [notes])
 
-  // useEffect(() => {
-  //   const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'))
-
-  //   //If savedNotes is empty or does not have a value then it will skip over this.
-  //   if (savedNotes) {
-  //     setNotes(savedNotes)
-  //   }
-  // }, [])
-
-  // useEffect(() => {
-  //   localStorage.setItem('react-notes-app-data', JSON.stringify(notes))
-  // }, [notes])
-
-  // This will take the text passed into the addNote section.
   const addNote = (text) => {
     const date = new Date()
     const newNote = {
